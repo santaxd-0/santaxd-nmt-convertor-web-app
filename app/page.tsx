@@ -1,10 +1,18 @@
-import { Button } from "@/components/ui/button";
+import { 
+  TXTReaderContainer,
+  PDFResultContainer,
+  Navbar
+} from "./modules/core/main";
+
 
 export default function Home() {
   return (
     <div>
-      <div>Hello World!</div>
-      <Button>Click on me</Button>
+      <Navbar />
+    <div className="flex gap-5 h-screen p-5 justify-center">
+      <TXTReaderContainer />
+      <PDFResultContainer />
+    </div>
     </div>
   );
 }
