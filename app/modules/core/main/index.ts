@@ -1,3 +1,2 @@
-export { TXTReaderContainer } from "./components/TXTReaderContainer/TXTReaderContainer";
-export { PDFResultContainer } from "./components/PDFResultContainer/PDFResultContainer";
+export { Form } from "./components/Form/Form";
 export { Navbar } from "./components/Navbar/Navbar";

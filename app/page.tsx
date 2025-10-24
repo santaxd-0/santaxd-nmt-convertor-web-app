@@ -1,18 +1,18 @@
 import { 
-  TXTReaderContainer,
-  PDFResultContainer,
+  Form,
   Navbar
 } from "./modules/core/main";
+import { Button } from "@/components/ui/button";
 
 
 export default function Home() {
   return (
     <div>
       <Navbar />
-    <div className="flex gap-5 h-screen p-5 justify-center">
-      <TXTReaderContainer />
-      <PDFResultContainer />
-    </div>
+      <div className="flex flex-col gap-5 justify-center items-center mt-10">
+        <Form />
+        <Button>Add question</Button>
+      </div>
     </div>
   );
 }
