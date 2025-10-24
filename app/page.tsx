@@ -1,18 +1,12 @@
-import { 
-  Form,
-  Navbar
-} from "./modules/core/main";
-import { Button } from "@/components/ui/button";
+import { Navbar } from "./modules/core/main";
+import { Main } from "./modules/core/main";
 
 
 export default function Home() {
   return (
-    <div>
+    <div className="relative">
       <Navbar />
-      <div className="flex flex-col gap-5 justify-center items-center mt-10">
-        <Form />
-        <Button>Add question</Button>
-      </div>
+      <Main />
     </div>
   );
 }

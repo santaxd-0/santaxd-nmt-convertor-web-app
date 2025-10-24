@@ -1,7 +1,7 @@
 import * as EmptyUI from "@/components/ui/empty";
 import { Button } from "@/components/ui/button";
 
-export const Empty = () => {
+export const EmptyPage = () => {
     return (
         <EmptyUI.Empty className="h-screen">
             <EmptyUI.EmptyHeader>
