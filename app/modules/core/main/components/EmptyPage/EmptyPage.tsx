@@ -1,7 +1,19 @@
+"use client";
+
 import * as EmptyUI from "@/components/ui/empty";
 import { Button } from "@/components/ui/button";
+import { Dispatch, SetStateAction } from "react";
 
-export const EmptyPage = () => {
+interface EmptyPageInterface {
+    setIsEmpty: Dispatch<SetStateAction<boolean>>;
+}
+
+export const EmptyPage = ({ setIsEmpty }: EmptyPageInterface) => {
+
+    const isEmptyState = () => {
+        setIsEmpty(false);
+    }
+
     return (
         <EmptyUI.Empty className="h-screen">
             <EmptyUI.EmptyHeader>
@@ -11,7 +23,7 @@ export const EmptyPage = () => {
                 </EmptyUI.EmptyDescription>
             </EmptyUI.EmptyHeader>
             <EmptyUI.EmptyContent>
-                <Button>Create form</Button>
+                <Button onClick={() => isEmptyState()}>Create form</Button>
             </EmptyUI.EmptyContent>
             <Button>Read the docs</Button>
         </EmptyUI.Empty>

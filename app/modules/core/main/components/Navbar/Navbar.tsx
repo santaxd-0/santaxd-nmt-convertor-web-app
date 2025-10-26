@@ -19,10 +19,11 @@ import {
 } from "@/components/ui/dropdown-menu";
 
 import { Download, Play } from "lucide-react";
+import { UIButton } from "../UIButton/UIButton";
 
 export const Navbar = () => {
     return (
-        <NavigationMenu className="rounded-b-xl border-2 p-3 fixed w-screen z-0">
+        <NavigationMenu className="rounded-b-xl border-2 p-3 fixed w-full z-0 backdrop-blur-sm">
             <NavigationMenuList className="flex gap-4 p-2 items-center justify-between">
                 <div className="flex items-center justify-center gap-5">
                     <NavigationMenuItem>
@@ -48,15 +49,9 @@ export const Navbar = () => {
                     </NavigationMenuItem>
                 </div>
                 <div className="flex items-center justify-center gap-5">
-                    <Button className="bg-yellow-500">
-                        <Play/>
-                        Convert
-                    </Button>
+                    <UIButton styleType="primary" buttonText="Convert" ButtonIcon={Play}/>
                     <ButtonGroup>
-                        <Button>
-                            <Download/>
-                            Download
-                        </Button>
+                        <UIButton buttonText="Download" ButtonIcon={Download}/>
                         <ButtonGroupSeparator/>
                         <DropdownMenu>
                             <DropdownMenuTrigger asChild>
