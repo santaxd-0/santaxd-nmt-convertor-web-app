@@ -1,12 +1,11 @@
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
-import { useState } from "react";
 
 
 interface AnswerInterface {
     labelText: string;
     value?: string;
-    onChange?: () => void;
+    onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
 export const Answer = ({ labelText, value, onChange }: AnswerInterface) => {

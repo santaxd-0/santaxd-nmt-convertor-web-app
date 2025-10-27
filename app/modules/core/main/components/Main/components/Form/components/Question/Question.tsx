@@ -14,7 +14,7 @@ interface QuestionInterface {
 
 export const Question = ({ questionId }: QuestionInterface) => {
     const [textAreaValue, setTextAreaValue] = useState("");
-    const [answersValue, setAnswersValue] = useState({
+    const [answersValue, setAnswersValues] = useState({
         a: "",
         b: "",
         c: "",
@@ -26,12 +26,17 @@ export const Question = ({ questionId }: QuestionInterface) => {
         setTextAreaValue(e.target.value);
     }
 
-    const changeAnswerValue = (e: React.ChangeEvent<HTMLInputElement>) => {
-        console.log("In progress");
-    }
+
+    const handleAnswerChange = (key: 'a' | 'b' | 'c' | 'd' | 'e', value: string) => {
+        setAnswersValues(prevValues => ({
+            ...prevValues,
+            [key]: value
+        }));
+    };
 
     const clearAllText = () => {
         setTextAreaValue("");
+        setAnswersValues({a: "", b: "", c: "", d: "", e: ""});
     }
 
     return (
@@ -54,11 +59,11 @@ export const Question = ({ questionId }: QuestionInterface) => {
                         value={textAreaValue} onChange={(e) => changeTextAreaValue(e)}/>
                     </div>
                     <div className="flex gap-10">
-                        <Answer labelText="A:" value={answersValue.a}/>
-                        <Answer labelText="Б:" value={answersValue.b}/>
-                        <Answer labelText="В:" value={answersValue.c}/>
-                        <Answer labelText="Г:" value={answersValue.d}/>
-                        <Answer labelText="Д:" value={answersValue.e}/>
+                        <Answer labelText="A:" value={answersValue.a} onChange={(e) => handleAnswerChange('a', e.target.value)}/>
+                        <Answer labelText="Б:" value={answersValue.b} onChange={(e) => handleAnswerChange('b', e.target.value)}/>
+                        <Answer labelText="В:" value={answersValue.c} onChange={(e) => handleAnswerChange('c', e.target.value)}/>
+                        <Answer labelText="Г:" value={answersValue.d} onChange={(e) => handleAnswerChange('d', e.target.value)}/>
+                        <Answer labelText="Д:" value={answersValue.e} onChange={(e) => handleAnswerChange('e', e.target.value)}/>
                     </div>
                 </div>
             </CardUI.CardContent>
