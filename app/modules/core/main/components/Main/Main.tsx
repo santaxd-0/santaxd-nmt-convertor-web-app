@@ -9,6 +9,21 @@ import { useState } from "react";
 export const Main = () => {
     const [isEmpty, setIsEmpty] = useState(true);
 
+    const [questions, setQuestions] = useState(
+        [
+            {id: 1,}
+        ]
+    );
+
+    const createNewQuestion = () => {
+        setQuestions(
+            prevQuestions => {
+                const newId = prevQuestions.length + 1;
+                return [...prevQuestions, {id: newId}];
+            }
+        );
+    }
+
     return (
         <TabManager.Tabs defaultValue="nmt-form">
             <TabManager.TabsList className="z-10 fixed top-0 left-1/2 -translate-x-1/2 mt-5">
@@ -18,7 +33,8 @@ export const Main = () => {
             <TabsContent value="nmt-form" className="mt-20">
                 {
                     !isEmpty ? (
-                        <Form/>
+                        <Form questions={questions}
+                        createNewQuestion={createNewQuestion}/>
                     ) : (
                         <EmptyPage setIsEmpty={setIsEmpty}/>
                     )
