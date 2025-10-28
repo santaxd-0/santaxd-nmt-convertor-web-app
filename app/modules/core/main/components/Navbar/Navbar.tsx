@@ -49,7 +49,8 @@ export const Navbar = () => {
                     </NavigationMenuItem>
                 </div>
                 <div className="flex items-center justify-center gap-5">
-                    <UIButton styleType="primary" buttonText="Convert" ButtonIcon={Play}/>
+                    <UIButton styleType="primary" buttonText="Convert" ButtonIcon={Play}
+                    />
                     <ButtonGroup>
                         <UIButton buttonText="Download" ButtonIcon={Download}/>
                         <ButtonGroupSeparator/>

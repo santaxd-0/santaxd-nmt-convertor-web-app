@@ -11,7 +11,17 @@ export const Main = () => {
 
     const [questions, setQuestions] = useState(
         [
-            {id: 1,}
+            {
+                id: 1,
+                question: "",
+                answers: {
+                    a: "",
+                    b: "",
+                    c: "",
+                    d: "",
+                    e: ""
+                }
+            }
         ]
     );
 
@@ -19,7 +29,15 @@ export const Main = () => {
         setQuestions(
             prevQuestions => {
                 const newId = prevQuestions.length + 1;
-                return [...prevQuestions, {id: newId}];
+                return [...prevQuestions, {id: newId, question: "",
+                answers: {
+                    a: "",
+                    b: "",
+                    c: "",
+                    d: "",
+                    e: ""
+                }
+            }];
             }
         );
     }
@@ -34,14 +52,15 @@ export const Main = () => {
                 {
                     !isEmpty ? (
                         <Form questions={questions}
-                        createNewQuestion={createNewQuestion}/>
+                        createNewQuestion={createNewQuestion}
+                        setQuestionsState={setQuestions}/>
                     ) : (
                         <EmptyPage setIsEmpty={setIsEmpty}/>
                     )
                 }
             </TabsContent>
             <TabsContent value="pdf-preview" className="mt-20">
-                
+
             </TabsContent>
         </TabManager.Tabs>
     );
