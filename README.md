@@ -23,7 +23,7 @@ Built with focus on simplicity, clean design, and smooth user experience.
 
 ---
 
-##📌 Status
+## 📌 Status
 
 Project is currently in progress.
 Backend part is under development.
